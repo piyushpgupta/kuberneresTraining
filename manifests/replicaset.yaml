@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hello-server
-        image: piyushrgupta/helloserver:v2
+        image: piyushrgupta/helloserver:v1
         ports:
         - containerPort: 8080
