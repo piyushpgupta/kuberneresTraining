@@ -14,7 +14,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-const version = "1.0.0"
+const version = "2.0.0"
 
 var healthCheckResponse = []byte(`{"status":"ready"}`)
 
@@ -48,7 +48,7 @@ func getRemoteIPHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Par
 func helloHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	log.Printf("Serving requests: %s", r.URL.Path)
 	hostname, _ := os.Hostname()
-	fmt.Fprintf(w, "V2:Hello World!\n")
+	fmt.Fprintf(w, "Hello World!\n")
 	fmt.Fprintf(w, "Hostname is: %s\n", hostname)
 	fmt.Fprintf(w, "Version is: %s\n", version)
 }

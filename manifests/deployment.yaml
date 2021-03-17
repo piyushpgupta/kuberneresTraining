@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-server
+  namespace: demo
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hello-server
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
       - name: hello-server
-        image: hello-server:v2
+        image: helloserver:v2
         ports:
         - containerPort: 8080
